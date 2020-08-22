@@ -16,6 +16,18 @@ reg.processImage()
 docker-tar-push {REGISTRYURL} {TARPATH} [login] [password] [--noSslVerify]
 ```
 
+## Snapcraft
+
+Build a snap package.
+```bash
+snapcraft
+```
+
+Install the locally build snap package.
+```bash
+sudo snap install docker-tar-push*.snap --dangerous
+```
+
 
 # Why?
 Because sometimes you will need only to repush image to registry, without full access to docker socket, docker client, so why then volume the whole socket?
