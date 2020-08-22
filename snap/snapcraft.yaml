@@ -1,0 +1,23 @@
+name: docker-tar-push
+version: git
+summary: Docker registry pusher
+description: |
+  This package contains docker-tar-push that allows pushing images packed as tar (usually from docker save command) to docker a registry.
+base: core18
+confinement: strict
+
+
+parts:
+  docker-tar-push:
+    plugin: python
+    python-version: python3
+    source: .
+
+
+apps:
+  docker-tar-push:
+    command: bin/docker-tar-push
+    plugs:
+      - network
+      - home
+      
